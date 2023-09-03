@@ -6,13 +6,26 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+
 @Service
-public class PersonService{
+public class PersonService {
 
     private final PersonRepository repository;
 
     public PersonService(PersonRepository repository) {
         this.repository = repository;
+    }
+
+
+
+    public String delete(Long id) {
+        try {
+            repository.deleteById(id);
+            return "Successfully deleted: "+id;
+        } catch (Exception e) {
+            return "ERROR";
+        }
+
     }
 
     public Person create (Person person) {
