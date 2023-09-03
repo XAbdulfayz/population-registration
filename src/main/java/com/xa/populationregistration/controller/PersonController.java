@@ -23,4 +23,8 @@ public class PersonController {
         return service.findByName(name);
     }
 
+    @GetMapping("find-by-id/{id}")
+    public Person findById(@PathVariable Long id){
+        return service.findById(id);
+    }
 }
