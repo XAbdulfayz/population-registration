@@ -15,6 +15,14 @@ public class PersonService{
         this.repository = repository;
     }
 
+
+
+    public Person findByName(String name){
+        return repository.findByName(name);
+    }
+
+
+
     public Person findById(Long id) {
         Optional<Person> result = repository.findById(id);
         return result.get();
