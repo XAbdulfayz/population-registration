@@ -36,7 +36,6 @@ public class PersonController {
     }
 
 
-
     @PutMapping("update/")
     public Person update(@RequestBody Person person){
         return service.update(person);
