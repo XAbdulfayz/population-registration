@@ -15,6 +15,12 @@ public class PersonService{
         this.repository = repository;
     }
 
+    public Person create (Person person) {
+        return repository.save(person);
+
+    }
+
+
     public Person update(Person person){
         return repository.save(person);
     }
