@@ -15,6 +15,9 @@ public class PersonService{
         this.repository = repository;
     }
 
+    public Person update(Person person){
+        return repository.save(person);
+    }
 
 
     public Person findByName(String name){
