@@ -1,5 +1,7 @@
 package com.xa.populationregistration.controller;
 
+import com.xa.populationregistration.dto.PersonCreateDto;
+import com.xa.populationregistration.dto.PersonUpdateDto;
 import com.xa.populationregistration.entity.Person;
 import com.xa.populationregistration.service.PersonService;
 import org.springframework.web.bind.annotation.*;
@@ -31,14 +33,14 @@ public class PersonController {
 
 
     @PostMapping("create/")
-    public Person createByName(@RequestBody Person person){
+    public Person createByName(@RequestBody PersonCreateDto person){
         return service.create(person);
     }
 
 
     @PutMapping("update/")
-    public Person update(@RequestBody Person person){
-        return service.update(person);
+    public Person update(@RequestBody PersonUpdateDto dto){
+        return service.update(dto);
     }
     @GetMapping("find-by-id/{id}")
     public Person findById(@PathVariable Long id){
