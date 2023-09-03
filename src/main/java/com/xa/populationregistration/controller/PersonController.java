@@ -20,6 +20,16 @@ public class PersonController {
         return service.findByName(name);
     }
 
+
+
+    @DeleteMapping("delete/{id}")
+    public String deleteById(@PathVariable Long id){
+        return service.delete(id);
+    }
+
+
+
+
     @PostMapping("create/")
     public Person createByName(@RequestBody Person person){
         return service.create(person);
