@@ -35,6 +35,12 @@ public class PersonController {
         return service.create(person);
     }
 
+
+
+    @PutMapping("update/")
+    public Person update(@RequestBody Person person){
+        return service.update(person);
+    }
     @GetMapping("find-by-id/{id}")
     public Person findById(@PathVariable Long id){
         return service.findById(id);
